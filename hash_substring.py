@@ -15,14 +15,14 @@ def read_input():
     key = input()
     if key[0] == "F":
         fileName = input("Input file name:")
-        fileName = "tests/" + fileName
+        fileName = fileName
         f = open(fileName, "r")
         pattern= f.readline()
         data = f.readline()
     
     elif key[0] == "I":
-       pattern = input()
-       data = input()
+        pattern = input()
+        data = input()
     else:
         print("error")
         return
