@@ -15,7 +15,7 @@ def read_input():
     key = input()
     if key[0] == "F":
         fileName = input("Input file name:")
-        fileName = fileName
+        fileName = "tests/" + fileName
         f = open(fileName, "r")
         pattern= f.readline()
         data = f.readline()
