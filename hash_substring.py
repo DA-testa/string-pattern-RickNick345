@@ -32,7 +32,7 @@ def read_input():
 def get_occurrences(pattern, data):
     output = []
     Alphabet = 256 # alphabet covers whole ASCII set
-    PrimeNum = 89 # minimizes hash collisions
+    PrimeNum = 89 # minimizes hash collisions (Skaitlis ar kuru dala hash rezultātu)
     PatternHash = 0
     DataHash = 0
      # Calculating the hash value of the pattern and the sliding window of the data
@@ -51,7 +51,7 @@ def get_occurrences(pattern, data):
 
         if i < len(data) - len(pattern): # Calculating hash value for next window of data
             DataHash = (Alphabet * (DataHash - ord(data[i]) * 
-            (Alphabet ** (len(pattern )-1))) + 
+            (Alphabet ** (len(pattern )-1))) + # == alphabet^len(pattern)-1
             ord(data[i + len(pattern)])) % PrimeNum # ** means exponentiation
             
             if DataHash < 0:
@@ -59,9 +59,6 @@ def get_occurrences(pattern, data):
 
     if len(output) == 0:
         return -1                       
-    # this function should find the occurances using Rabin Karp alghoritm 
-
-    # and return an iterable variable
     return output
 
 def print_occurrences(output):
