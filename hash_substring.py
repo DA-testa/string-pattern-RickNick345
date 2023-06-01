@@ -14,7 +14,7 @@ def read_input():
     # this is the sample return, notice the rstrip function
     key = input()
     if key[0] == "F":
-        fileName = input("Input file name:")
+        fileName = input()
         fileName = "tests/" + fileName
         f = open(fileName, "r")
         pattern= f.readline()
